@@ -1,5 +1,5 @@
 package question1;
-
+import java.util.*;
 /**
  * Décrivez votre classe FahrenheitCelsius ici.
  * 
@@ -8,34 +8,46 @@ package question1;
  */
 public class FahrenheitCelsius {
 
-	/**
-	 * le point d'entrée de cette application, dont le commentaire est à
-	 * compléter
-	 * 
-	 * @param args
-	 *            ...
-	 */
-	public static void main(String[] args) {
-		// pour tous les paramètres de la ligne de commande
-		int fahrenheit = 0;
-		float celsius = 0;
-		System.out.println(fahrenheit + "\u00B0F -> " + celsius + "\u00B0C"); // ligne,
-																				// format
-																				// imposés
-																				
-	}
+    /**
+     * le point d'entrée de cette application, dont le commentaire est à
+     * compléter
+     * 
+     * @param args
+     *            ...
+     */
+    public static void main(String[] args) {
+        // pour tous les paramètres de la ligne de commande
+        int fahrenheit = 0;
+        float celsius = 0;
 
-	/**
-	 * la méthode à compléter.
-	 * 
-	 * @param f
-	 *            la valeur en degré Fahrenheit
-	 * @return la conversion en degré Celsius
-	 */
-	public static float fahrenheitEnCelsius(int f) {
+        for (int i=0;i<args.length;i++){ 
+            fahrenheit  =Integer.parseInt(args[i]);
+            celsius = fahrenheitEnCelsius(fahrenheit);
+            System.out.println(fahrenheit + "\u00B0F -> " + celsius + "\u00B0C"); // ligne,
+        }                                                                       // format
+                                                                                // imposés
+                                                                                
+    }
 
-		return 0.F; // à compléter en remplaçant ce return 0.F par la fonction
-					// de conversion
-	}
+    /**
+     * la méthode à compléter.
+     * 
+     * @param f
+     *            la valeur en degré Fahrenheit
+     * @return la conversion en degré Celsius
+     */
+    public static float fahrenheitEnCelsius(int f) {
+
+        //return 0.F; // à compléter en remplaçant ce return 0.F par la fonction
+                    // de conversion
+        // °C = 5/9 * (°F -32)
+        // r = ((int)resultat*10)/10.0
+        
+        float c = (5F/9F)*(f-32);
+        float r = ((int)(c*10))/10F;
+        return r ;
+        
+        
+    }
 
 }
